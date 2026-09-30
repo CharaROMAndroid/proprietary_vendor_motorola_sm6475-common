@@ -1,0 +1,24 @@
+// Stock V2 AIDL library includes LHDCv5 symbols absent from the generated interface.
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.bluetooth.audio-V2-ndk",
+    owner: "motorola",
+    srcs: ["vendor.qti.hardware.bluetooth.audio-V2-ndk.so"],
+    compile_multilib: "64",
+    vendor_available: true,
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.btservices",
+    ],
+    prefer: true,
+    strip: {
+        none: true,
+    },
+    shared_libs: [
+        "libbinder_ndk",
+        "android.hardware.bluetooth.audio-V4-ndk",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
+}
